@@ -1,0 +1,102 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=Open+Sans:wght@300;400&display=swap");
+#body {
+  font-family: "Open Sans", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh;
+  padding-top: 250px;
+}
+
+#welcome {
+  width: 100%;
+  text-align: center;
+  padding: 90px;
+}
+
+#welcome_title,
+#welcome_descriptions,
+#welcome_buttons {
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+  animation: bounce 3s;
+}
+
+#welcome_description {
+  font-size: 16px;
+  margin: 20px 0;
+  text-align: justify;
+}
+
+#welcome_buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.welcome_button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #5aff96;
+  color: black;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.carousel_item {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: start;
+  margin-top: 100px;
+}
+
+.carousel_image {
+  width: 60%;
+  height: auto;
+  object-fit: cover;
+}
+
+#scroll_down {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@media (max-width: 768px) {
+  #body {
+    min-height: calc(100vh - 50px);
+    padding-top: 50px;
+    margin-top: -50px;
+  }
+
+  #welcome {
+    padding: 30px 0;
+  }
+
+  .carousel_item {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .carousel_image {
+    width: 100%;
+    height: auto;
+  }
+
+  .carousel_text {
+    font-size: 14px;
+    margin-left: 0;
+    padding: 10px;
+    width: 100%;
+  }
+
+  #welcome_descriptions,
+  #welcome_buttons {
+    max-width: 90%;
+  }
+}
