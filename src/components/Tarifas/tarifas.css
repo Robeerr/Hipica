@@ -1,31 +1,169 @@
-#tarifas {
-  padding: 20px;
-  text-align: center;
-}
-
-.tarifas-title {
-  font-size: 32px;
-  margin-bottom: 20px;
-  color: #333;
-}
-
-.tarifas-content {
-  margin: 0 auto;
-  max-width: 600px;
-  text-align: left;
-}
-
-.tarifas-content p {
-  font-size: 16px;
-  margin-bottom: 20px;
-}
-
-.tarifas-content ul {
-  list-style-type: none;
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  margin: 0;
   padding: 0;
 }
 
-.tarifas-content ul li {
-  font-size: 16px;
+#tarifas {
+  background-color: #f4f4f9;
+  padding-top: 250px;
+}
+
+.pricing-section {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.pricing-title {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.pricing-cards {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.pricing-cards-row {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.pricing-card {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 10px;
+  width: 300px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pricing-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+}
+
+.pricing-card h2 {
+  font-size: 48px;
   margin: 10px 0;
+}
+
+.pricing-card h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.pricing-card p {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.pricing-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px 0;
+}
+
+.pricing-card ul li {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 10px 0;
+}
+
+.check-icon {
+  margin-right: 10px;
+}
+
+.feature-text {
+  text-align: left;
+  padding-left: 10px;
+  padding-top: 10px;
+}
+
+.price-text {
+  font-size: 24px;
+  color: #999999;
+}
+
+.pricing-card button {
+  margin-top: 20px;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.pricing-card button:hover {
+  background-color: #ccc;
+}
+
+.pricing-card .popular-button {
+  background-color: white;
+  color: #007bff;
+}
+
+.pricing-card .popular-button:hover {
+  background-color: #ddd;
+}
+
+.slick-slider {
+  width: 100% !important;
+}
+
+.slick-slide {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  height: auto !important;
+}
+
+.slick-list {
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  #tarifas {
+    padding-top: 100px;
+  }
+
+  .pricing-cards {
+    width: 100%;
+  }
+
+  .pricing-card {
+    width: 90%;
+    margin: 10px auto;
+  }
+
+  .pricing-card:hover {
+    transform: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .pricing-cards-row {
+    display: none;
+  }
+
+  .slick-slider {
+    width: 100% !important;
+  }
+
+  .slick-slide {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    height: auto !important;
+  }
+
+  .slick-list {
+    overflow: hidden;
+  }
 }
