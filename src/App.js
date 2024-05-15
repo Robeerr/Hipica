@@ -1,13 +1,20 @@
 import "./App.css";
-import { BodyComponent } from "./components/Body";
-import { HeaderComponent } from "./components/Header";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { HomepageComponent } from "./components/Homepage";
+import { TarifasComponent } from "./components/Tarifas";
+import { ContactComponent } from "./components/Contact";
 
 function App() {
   return (
-    <>
-      <HeaderComponent />
-      <BodyComponent />
-    </>
+    <Router>
+      <div>
+        <Routes>
+          <Route path="/" element={<HomepageComponent />} />
+          <Route path="/tarifas" element={<TarifasComponent />} />
+          <Route path="/contacto" element={<ContactComponent />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 

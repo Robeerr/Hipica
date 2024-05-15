@@ -1,10 +1,14 @@
 import "./header.css";
+import { Link } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import ScrollReveal from "scrollreveal";
-import Logo from "../img/Logo_Hipica_JPEG-removebg.png";
+import Logo from "../../img/Logo_Hipica_JPEG-removebg.png";
+import { FaBars, FaTimes } from "react-icons/fa";
 
 export const HeaderComponent = () => {
   const [opacity, setOpacity] = useState(1);
+  const [menuOpen, setMenuOpen] = useState(false);
+
   useEffect(() => {
     const handleScroll = () => {
       const maxScroll = 500;
@@ -27,35 +31,37 @@ export const HeaderComponent = () => {
     });
   }, []);
 
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
+
   return (
     <div id="header" style={{ opacity }}>
       <div id="logo_img">
-        <img
-          src={Logo}
-          alt="Logo de Hípica Villa Martín"
-          width="250"
-          height="250"
-        />
+        <img src={Logo} alt="Logo de Hípica Villa Martín" className="logo" />
       </div>
       <div id="center_content">
-        <h1 class="title">Hipica Villa Martin</h1>
-        <ul id="menu_list">
+        <h1 className="title">Hipica Villa Martin</h1>
+        <ul id="menu_list" className={menuOpen ? "open" : ""}>
           <li>
-            <a href="#!">Inicio</a>
+            <Link to="/">Inicio</Link>
           </li>
           <li>
-            <a href="#!">Instalaciones</a>
+            <Link to="/servicios">Servicios</Link>
           </li>
           <li>
-            <a href="#!">Actividades</a>
+            <Link to="/tarifas">Tarifas</Link>
           </li>
           <li>
-            <a href="#!">Tarifas</a>
+            <Link to="/contacto">Contacto</Link>
           </li>
           <li>
-            <a href="#!">Contacto</a>
+            <Link to="/galeria">Galería</Link>
           </li>
         </ul>
+        <button id="menu_toggle" onClick={toggleMenu}>
+          {menuOpen ? <FaTimes /> : <FaBars />}
+        </button>
       </div>
     </div>
   );
